@@ -42,7 +42,7 @@ app.config["MAX_CONTENT_LENGTH"] = 3 * 1024 * 1024
 Session(app)
 
 # configurate cs50 SQL
-db = SQL("sqlite:///new.db")
+db = SQL("sqlite:///app.db")
 
 # Set the path for the profilepictures
 pb_path = "static/profilepictures/"
