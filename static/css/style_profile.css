@@ -1,0 +1,248 @@
+:root {}
+
+.site_box {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 50px;
+}
+
+.profilepicture img {
+    left: -8px;
+    top: -8px;
+    height: 166px;
+    width: 166px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+
+.acc_info {
+    margin-bottom: 30px;
+    margin-top: 50px;
+    max-width: 600px;
+    margin-left: 10%;
+}
+
+.informations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.username {
+    font-size: 1.5rem;
+}
+
+.class_posts {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 10%;
+}
+
+.all_options {
+    display: flex;
+    width: 240px;
+}
+
+.all_options input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.option {
+    display: flex;
+    padding: 0.25rem 1rem;
+    width: 80px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+.filter_friends {
+    border-top: 2px solid #e5e5eadd;
+    border-bottom: 2px solid #e5e5ea;
+    background-color: var(--friends_color);
+}
+
+.filter_public {
+    background-color: var(--public_color);
+    border: 2px solid #e5e5ea;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.filter_privat {
+    background-color: var(--privat_color);
+    border: 2px solid #e5e5ea;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+.posts {
+    margin-top: 20px;
+    border: 1px solid #e5e5ea;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.post {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+    margin: 0 auto 1rem;
+    padding: 0.5rem 1.5rem;
+    margin-top: 10px;
+    max-width: 80%;
+}
+
+.content_post {
+    border-radius: 1.15rem;
+    line-height: 1.25;
+    padding: 0.5rem .875rem;
+    position: relative;
+    word-wrap: break-word;
+    align-self: flex-end;
+}
+
+.content_post::before,
+.content_post::after {
+    bottom: -0.1rem;
+    content: "";
+    height: 1rem;
+    position: absolute;
+}
+
+.content_post::before {
+    border-bottom-left-radius: 0.8rem 0.7rem;
+    right: -0.35rem;
+    transform: translate(0, -0.1rem);
+}
+
+.content_post::after {
+    background-color: #fff;
+    border-bottom-left-radius: 0.5rem;
+    right: -40px;
+    transform: translate(-30px, -2px);
+    width: 10px;
+}
+
+
+
+.privat .content_post {
+    background-color: var(--privat_color);
+    color: var(--privat_text);
+}
+
+.privat .content_post::before {
+    border-right: 1rem solid var(--privat_color);
+}
+
+.public .content_post {
+    background-color: var(--public_color);
+    color: var(--puplic_text);
+}
+
+.public .content_post::before {
+    border-right: 1rem solid var(--public_color);
+}
+
+.friends .content_post {
+    background-color: var(--friends_color);
+    color: var(--friends_text);
+}
+
+.friends .content_post::before {
+    border-right: 1rem solid var(--friends_color);
+}
+
+.date {
+    padding-top: 3px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1rem;
+    color: #696969;
+    margin-top: 3px;
+}
+
+.buffer {
+    height: 50px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.title {
+    font-size: 1.5rem;
+    padding-right: 30px;
+    font-weight: 550;
+}
+
+.edit img {
+    height: 30px;
+    opacity: 0.75;
+}
+
+input:not(:checked)+div {
+    background-color: #FFFFFF;
+}
+
+
+.option_view {
+    display: flex;
+    padding: 0.25rem 1rem;
+    width: 120px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+.filter_friends_view {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 2px solid #e5e5ea;
+    border-left: 0px;
+    background-color: var(--friends_color);
+}
+
+.filter_public_view {
+    background-color: var(--public_color);
+    border: 2px solid #e5e5ea;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.settings {
+    display: flex;
+    align-items: flex-end;
+}
+
+a {
+    text-decoration: none;
+}
+
+.settings_btn {
+    border: 1px solid #e5e5ea;
+    border-radius: .75rem;
+    padding: 2px 4px;
+    cursor: pointer;
+    color: black;
+    text-align: center;
+}

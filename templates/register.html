@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="ufs-8">
+        <link href="static/css/style.css" rel="stylesheet">
+        <title>Register</title>
+        <script defer src="static/js/logreg.js"></script>
+    </head>
+
+    <body>
+        <div class="center">
+            <div>
+                <header>
+                    <h1>Register</h1>
+                </header>
+            </div>
+            <div>
+                <form action="/register" method="post">
+                    <div class="mb-3">
+                        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="email" name="email" placeholder="Email" type="text">
+                    </div>
+                    <div class="mb-3">
+                        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text" required>
+                    </div>
+                    <div class="mb-3">
+                        <input autocomplete="off" class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <input autocomplete="off" class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Password Confirmation" type="password">
+                    </div>
+                    <div class="mb-3"><button class="btn btn-primary" type="submit" disabled id="submit">Register</button></div>
+                </form>
+            </div>
+            <div class="link">
+                <a href="https://mrulost-cautious-cod-6px57x45pj526rg-5000.preview.app.github.dev/login">Already Registered?</a>
+            </div>
+            <div class="error">
+                {{ error }}
+            </div>
+        </div>
+    </body>
+
+</html>

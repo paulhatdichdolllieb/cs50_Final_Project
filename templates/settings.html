@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title>settings</title>
+<link href="../static/css/style_settings.css" rel="stylesheet">
+<script defer src="../static/js/settings.js"></script>
+{% endblock %}
+
+{% block home %}
+<text>Home</text>
+{% endblock %}
+{% block search %}
+<text>Search</text>
+{% endblock %}
+{% block poste %}
+<text>Poste</text>
+{% endblock %}
+{% block profile %}
+<text>Profile</text>
+{% endblock %}
+
+
+{% block scroller %}
+<div class="site">
+    <h1>Your Profile</h1>
+    <form action="/settings" method="post" enctype="multipart/form-data">
+        <div class="username">
+            <div class="title">Username</div>
+            <div class="current_username">
+                <input class="form-control" name="username" id="username" autocomplete="off" type="text" value="{{user['username']}}">
+            </div>
+            <div class="username_info">Other users will see this name and can finde you with it</div>
+        </div>
+        <div class="profile_picture">
+            <div class="title">Profile Picture</div>
+            <div class="display_picture">
+                <img id="imgPreview" src="/{{user['profile_picture']}}">
+                <div class="change_pb">
+                    <label class="no_mark">
+                        <input type="file" class="file-upload" id="profile_picture" name="profile_picture" accept="image/png, image/jpeg">
+                        <div class="change">Upload a foto</div>
+                    </label>
+                    <label class="no_mark">
+                        <input type="checkbox" value="delete_picture" name="delete_picture" id="delete_picture">
+                        <div>delete Picture</div>
+                    </label>
+                </div>
+                <div class="error">{{error}}</div>
+            </div>
+        </div>
+        <div class="colores">
+            <div class="title">Your colores</div>
+            <div class="color_changer">
+                <div class="col">
+                    <div class="col_info">Public</div>
+                    <div class="display_col">
+                        <div>
+                            <input type="color" value="{{user['color_public']}}" id="col_public" name="col_public">
+                            <span>background</span>
+                        </div>
+                        <div>
+                            <input type="color" value="{{user['text_color_public']}}" id="text_col_public" name="text_col_public">
+                            <span>text</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="col_info">Friends</div>
+                    <div class="display_col">
+                        <div>
+                            <input type="color" value="{{user['color_friends']}}" id="col_friends" name="col_friends">
+                            <span>background</span>
+                        </div>
+                        <div>
+                            <input type="color" value="{{user['text_color_friends']}}" id="text_col_friends" name="text_col_friends">
+                            <span>text</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="col_info">Private</div>
+                    <div class="display_col">
+                        <div>
+                            <input type="color" value="{{user['color_private']}}" id="col_private" name="col_private">
+                            <span>background</span>
+                        </div>
+                        <div>
+                            <input type="color" value="{{user['text_color_private']}}" id="text_col_private" name="text_col_private">
+                            <span>text</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="default">
+                <label class="no_mark">
+                    <input type="button" id="restet">
+                    <div>reset colores</div>
+                </label>
+            </div>
+        </div>
+        <div class="delete_acc">
+            <label class="no_mark">
+                <input type="checkbox" name="delete_acc" id="delete_acc" value="delete_acc">
+                <div class="delete">Delete acc</div>
+            </label>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="../profile/{{user['username']}}">
+                    <div class="exit">Exit without saving</div>
+                </a>
+            </div>
+            <div class="col button">
+                <button type="submit" class="btn btn-primary form-control">Save Changes</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

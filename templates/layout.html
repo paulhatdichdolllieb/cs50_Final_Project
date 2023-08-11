@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="ufs-8">
+        <link href="../static/css/style_layout.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        {% block head %}{% endblock %}
+    </head>
+
+    <body>
+        <div class="page">
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <div class="sidebar-header-container">
+                        <div class="sidebar-header-logo">
+
+                        </div>
+                        <div class="sidebar-header-text">
+                            <h1>Your Blog</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="icons">
+                    <div class="icons-icon">
+                        <a href='javascript:void(0)' onclick='window.location = "/"'>
+                            <span class='default-link'></span>
+                        </a>
+                        <div class="icons-icon-svg">
+                            <img src="../static/img/home.svg" />
+                        </div>
+                        <div class="icons-icon-name">
+                            {% block home %}{% endblock %}
+                        </div>
+                    </div>
+                    <div class="icons-icon">
+                        <a href='javascript:void(0)' onclick='window.location = "/search"'>
+                            <span class='default-link'></span>
+                        </a>
+                        <div class="icons-icon-svg">
+                            <img src="../static/img/search.svg">
+                        </div>
+                        <div class="icons-icon-name">
+                            {% block search %}{% endblock %}
+                        </div>
+                    </div>
+                    <div class="icons-icon">
+                        <a href='javascript:void(0)' onclick='window.location = "/poste"'>
+                            <span class='default-link'></span>
+                        </a>
+                        <div class="icons-icon-svg">
+                            <img src="../static/img/poste_circle.svg">
+                        </div>
+                        <div class="icons-icon-name">
+                            {% block poste %}{% endblock %}
+                        </div>
+                    </div>
+                    <div class="icons-icon">
+                        <a href='javascript:void(0)' onclick='window.location =  "/profile/{{user["username"]}}"'>
+                            <span class='default-link'></span>
+                        </a>
+                        <div class="icons-icon-svg">
+                            <img src="../static/img/account_circle.svg">
+                        </div>
+                        <div class="icons-icon-name">
+                            {% block profile %}{% endblock %}
+                        </div>
+                    </div>
+                    <div class="icons-icon">
+                        <a href='javascript:void(0)' onclick='window.location = "/login"'>
+                            <span class='default-link'></span>
+                        </a>
+                        <div class="icons-icon-svg">
+                            <img src="../static/img/logout.svg">
+                        </div>
+                        <div class="icons-icon-name">
+                            <text>Logout</text>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroller">
+                {% block scroller %}{% endblock %}
+            </div>
+        </div>
+    </body>
+
+</html>

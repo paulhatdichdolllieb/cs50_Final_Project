@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title>{{user["username"]}}</title>
+<link href="../static/css/style_profile.css" rel="stylesheet">
+<script defer src="../static/js/profile.js"></script>
+{% endblock %}
+
+{% block home %}
+<text>Home</text>
+{% endblock %}
+{% block search %}
+<text>Search</text>
+{% endblock %}
+{% block poste %}
+<text>Poste</text>
+{% endblock %}
+{% block profile %}
+<text><b>Profile</b></text>
+{% endblock %}
+
+{% block scroller %}
+<div class="site_box">
+    <div class="acc_info">
+        <div class="row">
+            <div class="col-4 profilepicture">
+                <img src="/{{user['profile_picture']}}">
+            </div>
+            <div class="col-8 informations">
+                <div class="row">
+                    <div class="col username">
+                        {{user["username"]}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 Blogs">
+                        <p>
+                            <number style="font-weight: 600;">{{user["blogs_int"]}}</number> Blogs
+                        </p>
+                    </div>
+                    <div class="col-4 follows">
+                        <p>
+                            <number style="font-weight: 600;">{{user["follows_int"]}}</number> Follows
+                        </p>
+                    </div>
+                    <div class="col-4 Blogs">
+                        <p>
+                            <number style="font-weight: 600;">{{user["follower_int"]}}</number> Follower
+                        </p>
+                    </div>
+                </div>
+                <div class="row settings">
+                    <a href="../settings">
+                        <div class="settings_btn">
+                            Edit Profile
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="class_posts">
+        <div class="all_options">
+            <label>
+                <input type="checkbox" value="public" id="public" />
+                <div class="option filter_public">Public</div>
+            </label>
+            <label>
+                <input type="checkbox" value="friends" id="friends" />
+                <div class="option filter_friends">Friends</div>
+            </label>
+            <label>
+                <input type="checkbox" value="privat" id="privat" />
+                <div class="option filter_privat">Privat</div>
+            </label>
+        </div>
+    </div>
+    <div class="posts">
+        {% for post in posts %}
+        <div class="post {{post['private']}}">
+            <div class="content_post">
+                <div class="header">
+                    <div class="title">{{post["title"]}}</div>
+                    <div class="edit"><a href="../edit/{{post['id']}}"><img src="../static/img/edit.svg"></a></div>
+                </div>
+                <div class="text_content">{{post["poste"]}}</div>
+                <div class="date">{{post["posted_on"]}}</div>
+            </div>
+        </div>
+        {% endfor %}
+        {{no_posts}}
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(":root").css({
+            "--public_color": "{{user['color_public']}}",
+            "--privat_color": "{{user['color_private']}}",
+            "--friends_color": "{{user['color_friends']}}",
+            "--puplic_text": "{{user['text_color_public']}}",
+            "--privat_text": "{{user['text_color_private']}}",
+            "--friends_text": "{{user['text_color_friends']}}"
+        });
+    });
+</script>
+{% endblock %}

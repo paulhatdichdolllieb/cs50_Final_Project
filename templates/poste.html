@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title>poste</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="static/css/style_poste.css" rel="stylesheet">
+{% endblock %}
+
+{% block home %}
+<text>Home</text>
+{% endblock %}
+{% block search %}
+<text>Search</text>
+{% endblock %}
+{% block poste %}
+<text><b>Poste</b></text>
+{% endblock %}
+{% block profile %}
+<text>Profile</text>
+{% endblock %}
+
+{% block scroller %}
+<form action="/poste" method="post">
+    <div class="poste">
+        <div class="class_posts">
+            <div class="visibilety">Visebel for: </div>
+            <div class="all_options">
+                <label>
+                    <input type="radio" value="public" name="visibility" />
+                    <div class="option filter_public">Pulic</div>
+                </label>
+                <label>
+                    <input type="radio" value="friends" name="visibility" />
+                    <div class="option filter_friends">Friends</div>
+                </label>
+                <label>
+                    <input type="radio" value="privat" name="visibility" checked />
+                    <div class="option filter_privat">Privat</div>
+                </label>
+            </div>
+        </div>
+        <div class="title_post">
+            <div class="heading">
+                <div class="title">
+                    <h2>Title</h2>
+                </div>
+                <div class="title_in">
+                    <input class="form-control" type="text" id="poste-title" name="poste-title" maxlength="30" autocomplete="off">
+                </div>
+                <div class="info"> 30 Characters</div>
+            </div>
+        </div>
+        <div class="contens">
+            <div class="form-group">
+                <textarea class="form-control" name="poste_text" id="poste_text" style="height: 60vh"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary form-control">Poste</button>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(":root").css({
+            "--public_color": "{{user['color_public']}}",
+            "--privat_color": "{{user['color_private']}}",
+            "--friends_color": "{{user['color_friends']}}",
+            "--puplic_text": "{{user['text_color_public']}}",
+            "--privat_text": "{{user['text_color_private']}}",
+            "--friends_text": "{{user['text_color_friends']}}"
+        });
+    });
+</script>
+{% endblock %}

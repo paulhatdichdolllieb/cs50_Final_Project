@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title>search</title>
+<link href="static/css/style_search.css" rel="stylesheet">
+<script defer src="static/js/search.js"></script>
+{% endblock %}
+
+{% block home %}
+<text>Home</text>
+{% endblock %}
+{% block search %}
+<text><b>Search</b></text>
+{% endblock %}
+{% block poste %}
+<text>Poste</text>
+{% endblock %}
+{% block profile %}
+<text>Account</text>
+{% endblock %}
+
+{% block scroller %}
+<div class="site">
+    <form action="/search" method="get">
+        <div class="search_bar">
+            <input type="text" id="search" name="search" oninput="x()" autocomplete="off" value="{{search}}" placeholder="type username to search">
+            <div class="search_btn">
+                <button type="submit">
+                    <img src="static/img/search.svg" autocomplete="off">
+                </button>
+            </div>
+        </div>
+    </form>
+    <div class="results" id="results">
+        <div class="m">
+            <template id="pb_template">
+                <a href="profile/">
+                    <div class="result" id="result">
+                        <div class="pb">
+                            <img id="profile_picture" src="static/profilepictures/default.png" style="width: 80px; height:80px;">
+                        </div>
+                        <div class="info">
+                            <div class="all_usernmae">
+                                <span id="username"></span>
+                            </div>
+                            <div class="blogs">
+                                <p id="blogs"></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="wrapper"></div>
+            </template>
+            {% if results_search %}
+            {% for acc in results_search["followed"] %}
+            <a href="profile/{{acc['username']}}">
+                <div class="result" id="result">
+                    <div class="pb">
+                        <img src="static/profilepictures/{{acc['profile_picture']}}" style="width: 80px; height:80px;">
+                    </div>
+                    <div class="info">
+                        <div class="all_usernmae">
+                            <span id="username">{{acc["username"]}}</span>
+                        </div>
+                        <div class="blogs">
+                            <p>{{acc["blogs_int"]}}</p>
+                        </div>
+                        <div class="followed">
+                            <p>followed</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="wrapper"></div>
+            {% endfor %}
+            {% for acc in results_search["not_followed"] %}
+            <a href="profile/{{acc['username']}}">
+                <div class="result" id="result">
+                    <div class="pb">
+                        <img src="static/profilepictures/{{acc['profile_picture']}}" style="width: 80px; height:80px;">
+                    </div>
+                    <div class="info">
+                        <div class="all_usernmae">
+                            <span class="username" id="username">{{acc["username"]}}</span>
+                        </div>
+                        <div class="blogs">
+                            <p>
+                                <number style="font-weight: 600;"> {{acc["blogs_int"]}} </number>Blogs
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="wrapper"></div>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <div class="no_result" id="no_result">
+            {{no_result}}
+        </div>
+        <div class="no_result" id="no_results"></div>
+    </div>
+</div>
+{% endblock %}

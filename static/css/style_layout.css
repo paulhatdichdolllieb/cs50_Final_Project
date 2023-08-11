@@ -1,0 +1,77 @@
+.page .sidebar {
+    height: 100vh;
+    width: 300px;
+    background: white;
+    top: 0;
+    left: 0;
+    position: fixed;
+    border-right: 2px solid silver;
+}
+
+
+.page .content {
+    margin-left: 250px;
+
+}
+
+.default-link {
+    /* all rules required to make the whole div clickable */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    /* this is a fix for IE7-9 */
+    background-color: #ffffff;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+.icons-icon {
+    position: relative;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.icons-icon-name {
+    position: relative;
+    top: -31px;
+    overflow: hidden;
+}
+
+.icons-icon-name text {
+    position: relative;
+    left: 55px;
+    font-size: 22px;
+}
+
+.icons-icon-svg {
+    padding-top: 15px;
+}
+
+
+.icons-icon-svg img {
+    position: relative;
+    height: 30px;
+    left: 10px;
+}
+
+.icons-icon:hover {
+    background-color: #e6e9ed;
+}
+
+.sidebar-header-container {
+    position: relative;
+    left: 20px;
+    margin-top: 60px;
+    margin-bottom: 120px;
+}
+
+.scroller {
+    margin-left: 300px;
+}

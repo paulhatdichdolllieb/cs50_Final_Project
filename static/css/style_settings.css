@@ -1,0 +1,165 @@
+.display_picture img {
+    object-fit: cover;
+    left: -8px;
+    top: -8px;
+    height: 166px;
+    width: 166px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+
+.site {
+    margin-bottom: 40px;
+    margin-top: 50px;
+    max-width: 800px;
+    margin-left: 10%;
+    margin-right: 20px;
+}
+
+.site h1 {
+    border-bottom: 1px solid #e5e5ea;
+}
+
+.current_username {
+    max-width: 600px;
+}
+
+.current_username input {
+    padding-left: 8px;
+}
+
+.title {
+    font-size: 1.25rem;
+    padding: 10px 0px;
+    font-weight: 500;
+}
+
+.username_info {
+    color: grey;
+    margin: 4px 0px;
+}
+
+.username {
+    margin-bottom: 5px;
+}
+
+.change {
+    border: 1px solid #e5e5ea;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.button {
+    width: 300px;
+}
+
+.file-upload {
+    display: none;
+}
+
+.color_changer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col_info {
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
+.default {
+    margin: 10px 0px;
+}
+
+.display_col {
+    display: flex;
+    flex-direction: column;
+}
+
+.col span {
+    color: grey;
+    padding: 0px 6px;
+}
+
+.col input {
+    border: none;
+    padding: 0px;
+    border-radius: 5px;
+}
+
+.display_col div {
+    display: flex;
+    margin-bottom: 5px;
+    align-items: flex-end;
+}
+
+.display_picture {
+    display: flex;
+    align-items: flex-end;
+}
+
+.display_picture label {
+    position: relative;
+    left: -40px;
+    overflow: overlay;
+}
+
+.profile_picture {
+    margin-bottom: 10px;
+}
+
+.default input {
+    display: none;
+}
+
+.default label {
+    border: 1px solid #e5e5ea;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 4px 8px;
+}
+
+.colores {
+    margin-bottom: 20px;
+}
+
+.save {
+    max-width: 700px;
+}
+
+input:not(:checked)+div {
+    background-color: #FFFFFF;
+}
+
+textarea {
+    resize: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.exit {
+    border: 1px solid #e5e5ea;
+    border-radius: .375rem;
+    padding: 2px 4px;
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.no_mark {
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
